@@ -1,0 +1,37 @@
+@import '../scss/var';
+
+.main-header {
+    background: $white;
+    padding: 10px 30px 10px 70px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    .header-container {
+        @include flex(center, space-between);
+
+        .brand-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: $heading-color;
+            text-decoration: none;
+        }
+
+        .btn-out {
+            padding: 10px 20px;
+            background-color: $white;
+            color: $black;
+            border: 2px solid $border-color;
+            border-radius: $border-radius;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 16px;
+            text-decoration: none;
+            &:hover{
+                background: $black;
+                color: $white;
+            }
+        }
+    }
+}

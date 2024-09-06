@@ -1,0 +1,31 @@
+$body-bg: #f4f4f9;
+$heading-color: #333;
+$text-color: #666666;
+$white: #fff;
+$black: #333;
+$border-color: #333;
+$border-radius: 5px;
+$green: #28a745;
+$dark-green: #218838;
+$pageHeight: calc(100vh - 62px);
+
+
+// mixin
+@mixin flex($align, $justify){
+    display: flex;
+    align-items: $align;
+    justify-content:  $justify;
+}
+
+@mixin center () {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin Grid($col, $size) {
+    display: grid;
+    grid-template-columns: repeat($col, $size);
+    //grid-template-columns: repeat(3, 1fr);  //ek size ke 3 columns banege ek row me
+    // Calling method @include Grid(4, 1fr);
+}

@@ -1,0 +1,37 @@
+@import '../scss/var';
+
+.home-page {
+    width: 100%;
+    height: $pageHeight;
+
+    .content {
+        @include center();
+        height: 100%;
+        flex-direction: column;
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: $heading-color;
+            margin-top: 90px;
+        }
+
+        p {
+            font-size: 18px;
+            color: $text-color;
+            margin-bottom: 40px;
+        }
+
+        .green-btn {
+            padding: 15px 30px;
+            background-color: $green;
+            color: $white;
+            border-radius: $border-radius;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            &:hover{
+                background-color: $dark-green;
+            }
+        }
+    }
+}
