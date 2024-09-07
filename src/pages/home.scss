@@ -8,18 +8,22 @@
         @include center();
         height: 100%;
         flex-direction: column;
+        text-align: centers;
 
         h1 {
             font-size: 48px;
             margin-bottom: 20px;
             color: $heading-color;
             margin-top: 90px;
+            line-height: normal;
         }
 
         p {
             font-size: 18px;
-            color: $text-color;
+            color: #666666;
             margin-bottom: 40px;
+            text-align: center;
+            line-height: normal;
         }
 
         .green-btn {

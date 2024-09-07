@@ -1,0 +1,242 @@
+@import '../../scss/var.scss';
+
+.registration-modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    // background: #0000005c;
+    background: #fff0;
+    backdrop-filter: blur(3px);
+    @include center();
+    align-items: flex-start;
+    padding-top: 30px;
+
+    .overlay {
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+
+    .modal-content {
+        width: 700px;
+        background: $white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+
+        .modal-header {
+            width: 100%;
+            padding: 25px 0px 25px 0px;
+            background-color: lightgray;
+        }
+
+        .modal-row {
+            padding: 15px;
+            display: flex;
+
+            .modal-col {
+                width: 50%;
+                padding: 15px;
+            }
+
+            h4 {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            .field {
+                label {
+                    color: $black;
+                    margin-bottom: 5px;
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+
+                input {
+                    width: 100%;
+                    height: 34px;
+                    color: #555;
+                    background-color: #fff;
+                    border: 1px solid #ccc;
+                    padding: 6px 12px;
+                    font-size: 14px;
+                    line-height: 1.42857143;
+                    border-radius: 4px;
+                    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+                    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+                    &:focus {
+                        border-color: #66afe9;
+                    }
+                }
+            }
+
+            .link {
+                color: $blue;
+                font-size: 14px;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: #23527c;
+                }
+            }
+
+            .submit-btn {
+                font-size: 14px;
+                font-weight: bold;
+                margin: 20px 0px 10px 0px;
+                height: 40px;
+                width: 100%;
+                color: #fff;
+                background-color: $blue;
+                border-color: #2e6da4;
+                padding: 6px 12px;
+                border-radius: 4px;
+            }
+
+            .signup-option {
+                font-size: 14px;
+                color: #3B3B3B;
+                text-align: center;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .social-signin {
+                .btn-block {
+                    span.label {
+                        display: block;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        font-size: 16px;
+                    }
+
+                    .btn {
+                        width: 100%;
+                        display: block;
+                        padding: 2px;
+                        height: 40px;
+                        font-size: 14px;
+                        border: 1px solid;
+                        @include center();
+                        margin-bottom: 15px;
+                        transition: background-color 0.3s ease;
+
+                        .icon {
+                            @include center();
+
+                            img {
+                                height: 20px;
+                            }
+                        }
+
+                        &.microsoft-btn {
+                            background: #5bc0de;
+                            border-color: #5bc0de;
+                            color: $white;
+                            border-radius: 4px;
+
+                            &:hover {
+                                background-color: #269abc;
+                                border-color: #1b6d85;
+                            }
+                        }
+
+                        &.apple-btn {
+                            background: #000;
+                            border-color: #000;
+                            color: $white;
+                            justify-content: flex-start;
+                            border-radius: 2px;
+
+                            span.icon {
+                                padding: 8px;
+                                border-radius: 2px;
+                                margin-right: 12px;
+                            }
+
+                            &:hover {
+                                color: #CCC;
+                            }
+                        }
+
+                        &.google-btn {
+                            justify-content: flex-start;
+                            background: #4285F4;
+                            border-color: #4285F4;
+                            color: $white;
+                            border-radius: 2px;
+                            padding-left: 1px;
+
+                            span.icon {
+                                background: $white;
+                                padding: 8px;
+                                border-radius: 2px;
+                                margin-right: 12px;
+                            }
+
+                            &:hover {
+                                background: #3f7ce8;
+                                color: #EEE;
+                            }
+                        }
+                    }
+                }
+
+                .info-msg {
+                    color: #747474;
+                    font-size: 11px;
+                }
+            }
+
+            .border {
+                position: relative;
+
+                .line {
+                    height: 100%;
+                    width: 2px;
+                    background: #F5F5F5;
+                    display: block;
+                }
+
+                .text {
+                    position: absolute;
+                    color: #A3A3A3;
+                    font-size: 16px;
+                    top: calc(50% - 22px);
+                    left: -8px;
+                    background: #fff;
+                    padding: 10px 2px;
+                }
+            }
+            &.forgot-password{
+                display: block;
+                h1{
+                    font-weight: 400;
+                }
+                span{
+                    font-size: 14px;
+                    display: block;
+                    margin-bottom: 20px;
+                }
+                .reset-password{
+                    background: $blue;
+                    &:hover{
+                        background: $hoverBlue;
+                    }
+                }
+            }
+        }
+        &.forget-modal{
+            width: 360px;
+        }
+    }
+}
