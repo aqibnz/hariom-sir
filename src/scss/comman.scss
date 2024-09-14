@@ -1,5 +1,7 @@
 @import url('https://cdn.jsdelivr.net/npm/@canvas-fonts/arial@1.0.4/index.min.js');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700&display=swap');
 @import './var.scss';
+// font-family: 'Josefin Sans', sans-serif;
 
 * {
     margin: 0;
@@ -13,7 +15,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     background: $body-bg;
-    line-height: 1.42857143;
+    line-height: normal;
     color: $text-color;
 }
 
@@ -105,3 +107,25 @@ button {
     -webkit-animation-name: bounceOutDown;
     animation-name: bounceOutDown;
   }
+
+//   
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+	border-radius: 8px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 8px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.2);
+	background-color: #555;
+}

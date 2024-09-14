@@ -1,0 +1,209 @@
+@import '../scss/var';
+
+.dashboard-view {
+    padding: 30px 40px 40px;
+
+    .table-title {
+        font-size: 24px;
+        font-weight: 400;
+        font-family: $fontFamily;
+    }
+
+    .sub-pare {
+        margin: 4px 0 40px;
+    }
+
+    .tabs {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+
+        li {
+            padding: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: $fontFamily;
+            user-select: none;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -1px;
+
+            &.active {
+                border-color: $theme-color;
+            }
+        }
+    }
+
+    .tab_content {
+        .tab-item {
+            display: none;
+
+            &.show {
+                display: block;
+            }
+        }
+    }
+}
+
+.search-box {
+    position: relative;
+    margin: 16px 0;
+
+    input {
+        width: 70%;
+        height: 36px;
+        border-radius: 2px;
+        padding: 8px 8px 8px 40px;
+        border: 1px solid #ccc;
+        border-radius: $border-radius;
+        color: $text-color;
+        font-size: 14px;
+
+        &::placeholder {
+            color: #ccc;
+        }
+
+        &:focus {
+            ~ {
+                label {
+                    i {
+                        color: $text-color
+                    }
+                }
+            }
+        }
+    }
+
+    label {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 36px;
+        height: 36px;
+        @include center();
+
+        i {
+            font-size: 20px;
+            color: #ccc;
+            transition: $color-transition;
+        }
+    }
+
+}
+
+.table-container {
+    width: 100%;
+    max-height: calc(100vh - 230px);
+    overflow: auto;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border-radius: $border-radius;
+    }
+
+    th,
+    td {
+        padding: 15px;
+        transition: $bg-transition;
+        background-color: rgba(255, 255, 255, 0.8);
+        color: $text-color;
+        font-size: 14px;
+        border-bottom: 1px solid #e8e8e8;
+    }
+
+    th {
+        text-align: left;
+    }
+
+    thead {
+        th {
+            // background-color: $white;
+        }
+    }
+
+    tbody {
+        tr {
+            transition: $bg-transition;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        td {
+            position: relative;
+
+            &:hover {
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    transition: $bg-transition;
+                    top: -9999px;
+                    bottom: -9999px;
+                    background-color: rgba(0, 0, 0, 0.2);
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}
+
+
+// CheckBox css
+.checkbox_wrap {
+    width: 15px;
+    margin-right: 5px;
+}
+
+.checkbox {
+    display: block;
+    border: 1px solid #e0e0e0;
+    width: 13px;
+    height: 13px;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox .input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkbox .mark {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    border: 1px solid #172a4b;
+    width: 13px;
+    height: 13px;
+    border-radius: 2px;
+    display: none;
+}
+
+.checkbox .mark:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 5px;
+    height: 3px;
+    border: 2px solid #172a4b;
+    border-top: 0px;
+    border-right: 0px;
+    transform: rotate(-45deg)
+}
+
+.checkbox .input:checked~.mark {
+    display: block;
+}

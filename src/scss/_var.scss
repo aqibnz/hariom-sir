@@ -7,9 +7,18 @@ $border-color: #333;
 $border-radius: 5px;
 $green: #28a745;
 $dark-green: #218838;
-$pageHeight: calc(100vh - 62px);
+$pageHeight: calc(100vh - 58px);
 $blue: #337ab7;
 $hoverBlue: #286090;
+// $hoverColor: #f5f5f5;
+$theme-color: #00646b; 
+$hoverColor: #e3ffd0;
+
+$bg-transition: background-color 0.3s ease, color 0.3s ease;
+$color-transition: color 0.3s ease, color 0.3s ease;
+$insideShadow: inset 0 0px 6px #0002;
+
+$fontFamily: 'Josefin Sans', sans-serif;
 
 
 // mixin
