@@ -114,9 +114,10 @@
             flex-wrap: wrap;
             padding: 10px;
             row-gap: 12px;
+            width: 150px;
 
             li {
-                width: 50%;
+                width: 100%;
                 font-size: 14px;
             }
         }
