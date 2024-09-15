@@ -1,7 +1,7 @@
 @import '../scss/var';
 
 .dashboard-view {
-    padding: 30px 40px 40px;
+    padding: 30px 30px 10px;
 
     .table-title {
         font-size: 24px;
@@ -10,7 +10,7 @@
     }
 
     .sub-pare {
-        margin: 4px 0 40px;
+        margin: 4px 0 20px;
     }
 
     .tabs {
@@ -32,6 +32,7 @@
 
             &.active {
                 border-color: $theme-color;
+                color: $theme-color;
             }
         }
     }
@@ -47,55 +48,85 @@
     }
 }
 
-.search-box {
-    position: relative;
-    margin: 16px 0;
+.search-filter {
+    @include flex(center, space-between);
 
-    input {
-        width: 70%;
-        height: 36px;
-        border-radius: 2px;
-        padding: 8px 8px 8px 40px;
-        border: 1px solid #ccc;
-        border-radius: $border-radius;
-        color: $text-color;
-        font-size: 14px;
+    .search-box {
+        position: relative;
+        margin: 16px 0;
 
-        &::placeholder {
-            color: #ccc;
-        }
+        input {
+            width: 300px;
+            height: 36px;
+            border-radius: 2px;
+            padding: 8px 8px 8px 40px;
+            border: 1px solid #ccc;
+            border-radius: $border-radius;
+            color: $text-color;
+            font-size: 14px;
 
-        &:focus {
-            ~ {
-                label {
-                    i {
-                        color: $text-color
+            &::placeholder {
+                color: #ccc;
+            }
+
+            &:focus {
+                ~ {
+                    label {
+                        i {
+                            color: $text-color
+                        }
                     }
                 }
             }
         }
+
+        label {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            @include center();
+
+            i {
+                font-size: 20px;
+                color: #ccc;
+                transition: $color-transition;
+            }
+        }
+
     }
 
-    label {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 36px;
-        height: 36px;
-        @include center();
+    .filters.dropdown {
+        &.true {
+            .dropdown-menu {
+                display: block;
+            }
+        }
 
-        i {
-            font-size: 20px;
-            color: #ccc;
-            transition: $color-transition;
+        .dropdown-menu {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 10px;
+            row-gap: 12px;
+
+            li {
+                width: 50%;
+                font-size: 14px;
+            }
         }
     }
-
 }
+
 
 .table-container {
     width: 100%;
-    max-height: calc(100vh - 230px);
+    max-height: calc(100vh - 340px);
     overflow: auto;
 
     table {
@@ -118,12 +149,6 @@
 
     th {
         text-align: left;
-    }
-
-    thead {
-        th {
-            // background-color: $white;
-        }
     }
 
     tbody {
@@ -153,57 +178,4 @@
             }
         }
     }
-}
-
-
-// CheckBox css
-.checkbox_wrap {
-    width: 15px;
-    margin-right: 5px;
-}
-
-.checkbox {
-    display: block;
-    border: 1px solid #e0e0e0;
-    width: 13px;
-    height: 13px;
-    border-radius: 2px;
-    position: relative;
-    cursor: pointer;
-}
-
-.checkbox .input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.checkbox .mark {
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    border: 1px solid #172a4b;
-    width: 13px;
-    height: 13px;
-    border-radius: 2px;
-    display: none;
-}
-
-.checkbox .mark:after {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 5px;
-    height: 3px;
-    border: 2px solid #172a4b;
-    border-top: 0px;
-    border-right: 0px;
-    transform: rotate(-45deg)
-}
-
-.checkbox .input:checked~.mark {
-    display: block;
 }

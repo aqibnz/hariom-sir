@@ -85,7 +85,7 @@
                         }
                     }
 
-                    &[attr="open"] {
+                    &[attr="true"] {
                         > {
                             .title {
                                 background: $hoverColor;

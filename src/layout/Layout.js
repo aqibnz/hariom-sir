@@ -19,7 +19,7 @@ function Layout({ children }) {
                         <li><NavLink to='/dashboard' className='title'><img src={Diagnosis} alt="icon" /> Diagnosis</NavLink></li>
                         <li ><NavLink to='/treatments' className='title'><img src={Treatments} alt="icon" /> Treatments</NavLink></li>
                         <li ><NavLink to='/profile' className='title'><img src={Profile} alt="icon" /> Profile</NavLink></li>
-                        <li attr={isOpen && "open"}>
+                        <li attr={isOpen.toString()}>
                             <NavLink to='/test-2' className='title'><img src={Department} alt="icon" /> Department </NavLink>
                             <span className='arrow' onClick={() => setIsOpen(!isOpen)}><i className="ri-arrow-down-s-line"></i></span>
                             <ul className="sub-menus">
